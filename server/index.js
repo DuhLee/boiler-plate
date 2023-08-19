@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 4000
 
 const config = require('./config/key');
 
@@ -25,6 +25,10 @@ mongoose.connect(config.mongoURI)
 
 app.get('/', (req, res) => {
   res.send('node.js sever start')
+})
+
+app.get('/api/hello', (req, res) => {
+    res.send('hello world!')
 })
 
 app.post('/api/user/register', async (req, res) => {
